@@ -5,7 +5,7 @@ $(function () {
     const dataname = $(this).attr('data-name');
     if ($(this).is(':checked')) {
       dict[dataid] = dataname;
-      $('.amenities h4').text(Object.values(dict));
+      $('.amenities h4').text(Object.values(dict)).text(', ');
     } else {
       if (dataid in dict) {
         delete dict[dataid];

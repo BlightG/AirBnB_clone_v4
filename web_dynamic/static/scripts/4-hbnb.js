@@ -5,7 +5,7 @@ $(function () {
     const dataname = $(this).attr('data-name');
     if ($(this).is(':checked')) {
       dict[dataid] = dataname;
-      $('.amenities h4').text(Object.values(dict));
+      $('.amenities h4').text(Object.values(dict)).join(', ');
     } else {
       if (dataid in dict) {
         delete dict[dataid];
@@ -15,7 +15,7 @@ $(function () {
       $('.amenities h4').html('&nbsp;');
     }
   });
-  $.getJSON('http://172.24.176.63:5001/api/v1/status', function (data) {
+  $.getJSON('http://0.0.0.0:5001/api/v1/status', function (data) {
     if (data.status == 'OK') {
       $('#api_status').addClass('available');
     } else {
@@ -26,7 +26,7 @@ $(function () {
     const amenity_dict = {};
     amenity_dict.amenities = Object.keys(dict);
     $.ajax({
-      url: 'http://172.24.176.63:5001/api/v1/places_search',
+      url: 'http://0.0.0.0:5001/api/v1/places_search',
       type: 'POST',
       dataType: 'json',
       data: JSON.stringify(amenity_dict),
