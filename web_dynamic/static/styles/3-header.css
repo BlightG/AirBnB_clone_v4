@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+}
+header div.logo {
+    background: url("../images/logo.png") no-repeat;
+    margin-left: 20px;
+    left: 20px;
+    width: 200px;
+    height: 100%;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CCCCCC;
+}
+
+header div#api_status {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.available {
+    background-color: #ff545f;
+}
